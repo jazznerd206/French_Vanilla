@@ -18,6 +18,7 @@ html, body {
     padding: 10px 10px;
     margin: 0 10px;
     border: .5px solid goldenrod;
+    /* height: 2em; */
 }
 
 /* CSS GRID STARTER */
@@ -25,7 +26,7 @@ html, body {
     display: grid;
     grid-column: 200px;
     grid-template-columns: repeat(3, 200px [col-start]);
-    grid-template-rows: 25% 100px auto;
+    grid-template-rows: 100% 50px auto;
 }
 
 /* LAST CHILD TAKES REMAINING SPACE */
@@ -93,4 +94,12 @@ html, body {
     filter: blur(0.4rem);
     opacity: 0.7;
     z-index: -1;
+}
+
+/* GRADIENT TEXT */
+.gradient-text {
+    font-size: 3em;
+    background: -webkit-linear-gradient(white, goldenrod);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
