@@ -53,7 +53,7 @@ html, body {
 }
 .button:before, .button:after {
     border: 0 solid transparent;
-    transition: all 0.25s;
+    transition: all .5s;
     content: '';
     height: 24px;
     position: absolute;
@@ -103,3 +103,19 @@ html, body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
+/* HOVER REVEAL TRIGGER */
+.tail {
+    margin-top: 25px;
+    font-size: 2em;
+    transition: max-height, opacity 1s;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+.trigger:hover > .tail {
+    max-height: var(--max-height);
+    opacity: 1;
+}
+  
