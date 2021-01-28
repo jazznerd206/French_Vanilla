@@ -1,20 +1,18 @@
+/*  */
 html, body {
     position: relative;
     background: black;
     color: goldenrod;
     height: 100%;
     width: 100%;
+    text-align: center;
 }
-
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: repeat(3, 200px [col-start]);
 }
-
 .inner {
     text-align: center;
     padding: 10px 10px;
@@ -22,3 +20,60 @@ html, body {
     border: .5px solid goldenrod;
 }
 
+/* CSS GRID STARTER */
+.container {
+    display: grid;
+    grid-column: 200px;
+    grid-template-columns: repeat(3, 200px [col-start]);
+    grid-template-rows: 25% 100px auto;
+}
+
+/* LAST CHILD TAKES REMAINING SPACE */
+/* .container {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+  
+.container > div:last-child {
+    background-color: tomato;
+    flex: 1;
+} */
+
+/* BUTTON WITH BORDER ANIMATION */
+.button {
+    background-color: #c47135;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+}
+.button:before, .button:after {
+    border: 0 solid transparent;
+    transition: all 0.25s;
+    content: '';
+    height: 24px;
+    position: absolute;
+    width: 24px;
+}
+.button:before {
+    border-top: 2px solid #c47135;
+    left: 0px;
+    top: -5px;
+}
+.button:after {
+    border-bottom: 2px solid #c47135;
+    bottom: -5px;
+    right: 0px;
+}
+.button:hover {
+    background-color: #c47135;
+}
+.button:hover:before, .button:hover:after {
+    height: 100%;
+    width: 100%;
+}
+
+/* DYNAMIC SHADOW */
