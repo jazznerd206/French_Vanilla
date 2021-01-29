@@ -24,7 +24,6 @@ html, body {
 /* CSS GRID STARTER */
 .container {
     display: grid;
-    grid-column: 200px;
     grid-template-columns: repeat(3, 200px [col-start]);
     grid-template-rows: 100% 50px auto;
 }
@@ -112,6 +111,7 @@ html, body {
     overflow: hidden;
     max-height: 0;
     opacity: 0;
+    background-color: white;
 }
 
 .trigger:hover > .tail {
@@ -170,4 +170,26 @@ html, body {
     z-index: 10;
     opacity: 1;
     transition: opacity 1s, left .5s, z-index 1s;
+}
+
+/* TRUNCATE TEXT MULTILINE */
+.truncate-text-multiline {
+    overflow: hidden;
+    display: block;
+    height: 109.2px;
+    margin: 0 auto;
+    font-size: 26px;
+    line-height: 1.4;
+    width: 400px;
+    position: relative;
+    background-color: black;
+}  
+.truncate-text-multiline:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 36.4px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #ffffff 50%);
 }
