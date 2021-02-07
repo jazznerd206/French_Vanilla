@@ -42,26 +42,26 @@ section #chief {
 @keyframes animate {
     0%{
       transform: translateZ(2000px);
-      background: url('./IMG_0805.png');
+      background: url('./assets/IMG_0603.png');
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
     }
     100% {
       transform: translateZ(0px);
-      background: url('./assets/IMG_0805.png');
+      background: url('./assets/IMG_0603.png');
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
       /* border: 1px solid rgba(0, 0, 0, .1); */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+      /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0); */
     }
   }
   
   section.active .img-panels .panels {
     animation: animateTwo 2s ease-in-out forwards;
-    background: url('./IMG_0805.png');
+    background: url('./assets/IMG_0603.png');
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -70,7 +70,7 @@ section #chief {
   @keyframes animateTwo {
     0%{
       transform: translateZ(0px);
-      background: url('./assets/IMG_0805.png');
+      background: url('./assets/IMG_0603.png');
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
@@ -78,7 +78,7 @@ section #chief {
     }
     100% {
       transform: translateZ(2000px);
-      background: url('./assets/IMG_0805.png');
+      background: url('./assets/IMG_0603.png');
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
