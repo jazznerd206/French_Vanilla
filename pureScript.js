@@ -1,6 +1,6 @@
 // SERIALIZE COOKIE
 const serializeCookie = (name, val) => `${encodeURIComponent(name)}=${encodeURIComponent(val)}`;
-console.log('this is the serializeCookie output: ',serializeCookie('foo', 'bar'));
+// console.log('this is the serializeCookie output: ',serializeCookie('foo', 'bar'));
 
 // SHUFFLE ALGORITHM
 // Fisher Yates algorithm 
@@ -14,7 +14,7 @@ const shuffle = ([...arr]) => {
     return arr;
 };
 const foo = [1, 2, 3];
-console.log('shuffle ', shuffle(foo))
+// console.log('shuffle ', shuffle(foo))
 // ================================
 
 
@@ -55,16 +55,25 @@ const toSnakeCase = str =>
     .map(x => x.toLowerCase())
     .join('_');
 
-console.log(toSnakeCase('camelCase')); // 'camel_case'
-console.log(toSnakeCase('some text')); // 'some_text'
-console.log(toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens')); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
-console.log(toSnakeCase('AllThe-small Things')); // "all_the_smal_things"
-console.log(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
+// console.log(toSnakeCase('camelCase')); // 'camel_case'
+// console.log(toSnakeCase('some text')); // 'some_text'
+// console.log(toSnakeCase('some-mixed_string With spaces_underscores-and-hyphens')); // 'some_mixed_string_with_spaces_underscores_and_hyphens'
+// console.log(toSnakeCase('AllThe-small Things')); // "all_the_smal_things"
+// console.log(toSnakeCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')); // "i_am_listening_to_fm_while_loading_different_url_on_my_browser_and_also_editing_some_xml_and_html"
 // ==============================
 
 
 // REMOVE NON ASCII
 const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
-console.log('äÄçÇéÉêlorem-ipsumöÖÐþúÚ ', removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ')); // 'lorem-ipsum'
+// console.log('äÄçÇéÉêlorem-ipsumöÖÐþúÚ ', removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ')); // 'lorem-ipsum'
 // ==============================
 
+// PRIMES
+const primes = num => {
+    let arr = Array.from({ length: num - 1 }).map((x, i) => i + 2);
+    let sqroot = Math.floor(Math.sqrt(num));
+    let numsTillSqroot = Array.from({ length: sqroot - 1 }).map((x, i) => i + 2);
+    numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
+    return arr;
+};
+console.log('primes', primes(10))

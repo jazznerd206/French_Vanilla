@@ -1,8 +1,11 @@
 /*  */
 html, body {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     position: relative;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
     height: 100%;
     width: 100%;
     text-align: center;
@@ -22,24 +25,34 @@ html, body {
 }
 
 /* CSS GRID STARTER */
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat(3, 200px [col-start]);
     grid-template-rows: 100% 50px auto;
-}
+} */
 
 /* LAST CHILD TAKES REMAINING SPACE */
-/* .container {
+.container {
     text-align: center;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    margin: 10px auto;
+    width: auto;
 }
   
 .container > div:last-child {
     background-color: tomato;
     flex: 1;
-} */
+}
 
 /* BUTTON WITH BORDER ANIMATION */
 .button {
@@ -148,17 +161,17 @@ html, body {
 /* POPOUT MENU */
 .reference {
     position: relative;
-    color: white;
-    z-index: 100;
+    background: tomato;
+    width: 100px;
+    height: 100px;
 }
 .popout-menu {
     position: absolute;
-    opacity: 0;
-    left: 0%;
-    background: rgb(148, 142, 142);
+    visibility: hidden;
+    left: 100%;
+    background: #333;
     color: white;
-    width: 100%;
-    z-index: 0;
+    padding: 15px;
 }
 .popout-menu ul {
     list-style-type: none;
@@ -166,10 +179,7 @@ html, body {
 .reference:hover > .popout-menu,
 .reference:focus > .popout-menu,
 .reference:focus-within > .popout-menu {
-    left: 100%;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 1s, left .5s, z-index 1s;
+    visibility: visible;
 }
 
 /* TRUNCATE TEXT MULTILINE */
@@ -238,4 +248,21 @@ html, body {
 }
 .mouse-cursor-gradient-tracking:hover::before {
     --size: 200px;
+}
+
+/* BOX HOVER ANIMATION */
+.hover-shadow-box-animation {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    margin: 10px;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+.hover-shadow-box-animation:hover,
+.hover-shadow-box-animation:focus,
+.hover-shadow-box-animation:active {
+    box-shadow: 1px 1px 10px 10px rgba(67, 205, 205, 0.5);
+    transform: scale(1.2);
 }
