@@ -24,10 +24,10 @@ const pull = (arr, ...args) => {
     let pulled = arr.filter((v, i) => !argState.includes(v));
     arr.length = 0;
     pulled.forEach(v => arr.push(v));
-    console.log('pulled ', pulled)
+    // console.log('pulled ', pulled)
 };
 let requests = ['a', 'b', 'c', 'a', 'b', 'c'];
-pull(requests, 'a', 'c');
+// pull(requests, 'a', 'c');
 // ================================
 
 // 
@@ -76,4 +76,46 @@ const primes = num => {
     numsTillSqroot.forEach(x => (arr = arr.filter(y => y % x !== 0 || y === x)));
     return arr;
 };
-console.log('primes', primes(10))
+// console.log('primes', primes(10))
+
+// polygraph
+const polygraph = (answer, notLie) => answer.every(obj => obj[notLie]);
+console.log(polygraph([
+    { user: 'Nipsy', sex: 'male' },
+    { user: 'Hussle', sex: 'male' },
+    { user: 'Alicia', sex: 'female' },
+    { user: 'Keys', sex: 'female' },
+], 'sex')); // true
+
+// HEX TO RGB
+const hexToRGB = hex => {
+    let alpha = false;
+    let h = hex.slice(hex.startsWith('#') ? 1 : 0);
+    if (h.length === 3) h = [...h].map(x => x + x).join('');
+    else if (h.length === 8) alpha = true;
+    h = parseInt(h, 16);
+    return (
+        'rgb' +
+        (alpha ? 'a' : '') +
+        '(' +
+        (h >>> (alpha ? 24 : 16)) +
+        ', ' +
+        ((h & (alpha ? 0x00ff0000 : 0x00ff00)) >>> (alpha ? 16 : 8)) +
+        ', ' +
+        ((h & (alpha ? 0x0000ff00 : 0x0000ff)) >>> (alpha ? 8 : 0)) +
+        (alpha ? `, ${h & 0x000000ff}` : '') +
+        ')'
+    );
+};
+// hexToRGB('#27ae60ff'); // 'rgba(39, 174, 96, 255)'
+// hexToRGB('27ae60'); // 'rgb(39, 174, 96)'
+// hexToRGB('#fff'); // 'rgb(255, 255, 255)'
+
+// BACKWARDS ARRAY POPULATER
+const initializeArrayWithRangeRight = (end, start = 0, step = 1) =>
+  Array.from({ length: Math.ceil((end + 1 - start) / step) }).map(
+    (v, i, arr) => (arr.length - i - 1) * step + start
+);
+initializeArrayWithRangeRight(5); // [5,4,3,2,1,0]
+initializeArrayWithRangeRight(7, 3); // [7,6,5,4,3]
+initializeArrayWithRangeRight(9, 0, 2); // [8,6,4,2,0]

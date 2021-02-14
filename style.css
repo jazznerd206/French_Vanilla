@@ -1,8 +1,14 @@
 /*  */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 html, body {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    box-sizing: border-box;
     position: relative;
     background: white;
     color: black;
@@ -44,15 +50,15 @@ html, body {
 .row {
     display: flex;
     flex-flow: row wrap;
-    flex-grow: 1;
+    justify-content: space-between;
     margin: 10px auto;
     width: auto;
 }
   
-.container > div:last-child {
+/* .container > div:last-child {
     background-color: tomato;
     flex: 1;
-}
+} */
 
 /* BUTTON WITH BORDER ANIMATION */
 .button {
@@ -265,4 +271,17 @@ html, body {
 .hover-shadow-box-animation:active {
     box-shadow: 1px 1px 10px 10px rgba(67, 205, 205, 0.5);
     transform: scale(1.2);
+}
+
+/* Box-sizing reset */
+.box {
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    background: tomato;
+    color: white;
+    border: 10px solid red;
+}
+.content-box {
+    box-sizing: content-box;
 }
