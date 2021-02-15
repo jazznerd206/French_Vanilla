@@ -101,8 +101,8 @@ for (let i = 0; i < numTrunks; i++) {
         y: canvas.height + 10,
         thickness: 20,
         width: 35,
-        loss: .9,
-        direction: getRandom(0, 1),
+        loss: .5,
+        direction: getRandom(0, 100),
         angle: getRandom(0, 16) * PI / 16,
         color: colors[i]
     })
