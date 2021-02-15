@@ -3,12 +3,8 @@
 
 // Use Array.prototype.filter() for an array containing only the unique values.
 
-const filterNonUnique = arr => 
-    arr.filter(i => {
-        // i refers to whatever objects the array is made up of, not the iterator
-        console.log(arr.indexOf(i), arr.lastIndexOf(i));
-        // if the index equals the last index, there is no matching element, let it through the filter
-        arr.indexOf(i) === arr.lastIndexOf(i)
-    });
 
-filterNonUnique([1, 2, 2, 3, 4, 4, 5]); // [1, 3, 5]
+// if the index equals the last index, there is no matching element, let it through the filter
+const findUniqueValues = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
+
+console.log(findUniqueValues([1, 2, 2, 3, 4, 4, 5])); // [1, 3, 5]
