@@ -99,11 +99,11 @@ for (let i = 0; i < numTrunks; i++) {
     Trunk({
         x: start,
         y: canvas.height + 10,
-        thickness: 20,
-        width: 35,
+        thickness: 60,
+        width: 20,
         loss: .5,
         direction: getRandom(0, 100),
-        angle: getRandom(0, 16) * PI / 16,
+        angle: getRandom(0, 40) * PI / 40,
         color: colors[i]
     })
 }
