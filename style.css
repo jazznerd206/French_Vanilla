@@ -281,7 +281,14 @@ html, body {
     background: tomato;
     color: white;
     border: 10px solid red;
+    /* padding: 0 1rem; */
+    transition: opacity 0.2s;
 }
 .content-box {
     box-sizing: content-box;
 }
+
+/* sibling fade */
+.sibling-fade:hover .box:not(:hover) {
+    opacity: 0.5;
+  }
